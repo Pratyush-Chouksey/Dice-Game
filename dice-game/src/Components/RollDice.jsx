@@ -7,7 +7,7 @@ const RollDice = ({ relodeImg, randomNumeder }) => {
       <div className="dice" onClick={relodeImg}>
         <img
           src={`/Images/Dice_Faces/dice_${randomNumeder}.png`}
-          alt="dice 1"
+          alt={`dice ${randomNumeder}`}
         />
       </div>
       <p>Click on Dice to roll</p>
@@ -46,4 +46,3 @@ const DiceContainer = styled.div`
     }
   }
 `;
-

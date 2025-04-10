@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const PlayNow = ({ handleStart }) => {
   return (
@@ -12,8 +12,8 @@ const PlayNow = ({ handleStart }) => {
         <Button onClick={handleStart}>Play Now</Button>
       </Content>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   max-width: 1180px;
@@ -30,7 +30,7 @@ const Container = styled.div`
     justify-content: center;
     gap: 40px;
   }
-`
+`;
 
 const ImageWrapper = styled.div`
   img {
@@ -41,7 +41,7 @@ const ImageWrapper = styled.div`
       width: 70%;
     }
   }
-`
+`;
 
 const Content = styled.div`
   display: flex;
@@ -51,7 +51,7 @@ const Content = styled.div`
   @media (max-width: 768px) {
     align-items: center;
   }
-`
+`;
 
 const H1 = styled.h1`
   font-weight: bold;
@@ -65,7 +65,7 @@ const H1 = styled.h1`
   @media (max-width: 480px) {
     font-size: 36px;
   }
-`
+`;
 
 const Button = styled.button`
   color: white;
@@ -85,6 +85,6 @@ const Button = styled.button`
     color: black;
     transition: 0.3s background ease-in;
   }
-`
+`;
 
-export default PlayNow
+export default PlayNow;
