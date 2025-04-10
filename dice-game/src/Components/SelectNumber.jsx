@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-const SelectNumber = ({selected,setSelected,error}) => {
+const SelectNumber = ({ selected, setSelected, error }) => {
   const arr = [1, 2, 3, 4, 5, 6];
   return (
     <NumberSelectorContainer>
-        <p className="error">{error}</p>
+      <p className="error">{error}</p>
       <div className="flex">
         {arr.map((value, i) => (
           <Box
@@ -25,46 +25,27 @@ const SelectNumber = ({selected,setSelected,error}) => {
 const NumberSelectorContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-
-  @media (max-width: 768px) {
-    align-items: center;
-    text-align: center;
-  }
+  align-items: end;
 
   .flex {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 10px;
   }
-
   p {
     font-size: 24px;
     font-weight: 700;
-
-    @media (max-width: 768px) {
-      font-size: 20px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 18px;
-    }
   }
-
   .error {
     color: red;
-    margin-bottom: 10px;
-    font-size: 14px;
+    font-weight: 600;
   }
 `;
 
 const Box = styled.div`
   height: 72px;
   width: 72px;
-  border: 1px solid black;
+  border: 2px solid black;
   display: grid;
   place-items: center;
   font-size: 24px;
@@ -72,13 +53,6 @@ const Box = styled.div`
   background-color: ${(props) => (props.isSelected ? "black" : "white")};
   color: ${(props) => (!props.isSelected ? "black" : "white")};
   cursor: pointer;
-  transition: all 0.3s ease;
-
-  @media (max-width: 480px) {
-    height: 60px;
-    width: 60px;
-    font-size: 20px;
-  }
 `;
 
 export default SelectNumber;

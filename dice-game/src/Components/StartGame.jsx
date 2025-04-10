@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
 import Score from "./Score";
 import SelectNumber from "./SelectNumber";
-import styled from "styled-components";
 import RollDice from "./RollDice";
-import { useState } from "react";
 import Rules from "./Rules";
 
 export const StartGame = () => {
@@ -16,22 +15,23 @@ export const StartGame = () => {
   function randomNumberGenretor(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
   function relodeImg() {
     if (selected === undefined) {
       setError(`You Have Not Selected Any Number`);
     } else {
-        setError()
+      setError();
       const random = randomNumberGenretor(1, 6);
       setRandomNumber(random);
-      if (random == selected) {
+      if (random === selected) {
         setScore((prev) => prev + selected);
       } else {
         setScore((prev) => prev - 1);
       }
       setSelected();
-      console.log(selected)
     }
   }
+
   return (
     <MainContainer>
       <div className="top_section">
@@ -44,12 +44,11 @@ export const StartGame = () => {
       </div>
       <RollDice relodeImg={relodeImg} randomNumeder={randomNumeder} />
       <div className="btns">
-        <OutlineButton onClick={()=>setScore(0)}>Reset Score</OutlineButton>
+        <OutlineButton onClick={() => setScore(0)}>Reset Score</OutlineButton>
         <Button onClick={() => setShowRules((prev) => !prev)}>
           {showRules ? "Hide" : "Show"} Rules
         </Button>
       </div>
-
       {showRules && <Rules />}
     </MainContainer>
   );
@@ -63,15 +62,9 @@ const MainContainer = styled.main`
   .top_section {
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: end;
     flex-wrap: wrap;
     gap: 20px;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
   }
 
   .btns {
@@ -79,7 +72,7 @@ const MainContainer = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 `;
 
@@ -87,23 +80,18 @@ const Button = styled.button`
   color: white;
   padding: 10px 18px;
   background: #000000;
-  border-radius: 5px;
+  border-radius: 8px;
   min-width: 220px;
   border: none;
   font-size: 16px;
-  border: 1px solid transparent;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.4s background ease-in;
+  transition: all 0.3s;
 
   &:hover {
     background-color: white;
     border: 1px solid black;
     color: black;
-  }
-
-  @media (max-width: 480px) {
-    min-width: 180px;
-    font-size: 14px;
   }
 `;
 

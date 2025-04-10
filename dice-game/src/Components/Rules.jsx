@@ -8,10 +8,9 @@ const Rules = () => {
         <p>Select any number</p>
         <p>Click on dice image</p>
         <p>
-          after click on dice if selected number is equal to dice number you
-          will get same point as dice{" "}
+          If selected number matches dice roll, you get points = dice number.
         </p>
-        <p>if you get wrong guess then 2 point will be dedcuted </p>
+        <p>If it doesn't match, you lose 1 point.</p>
       </div>
     </RulesContainer>
   );
@@ -22,32 +21,19 @@ export default Rules;
 const RulesContainer = styled.div`
   max-width: 800px;
   margin: 40px auto 0;
-  background-color: #fbf1f1;
-  padding: 20px;
+  background-color: #fff6f6;
+  padding: 24px;
   border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
   h2 {
-    font-size: 24px;
-    text-align: center;
-
-    @media (max-width: 768px) {
-      font-size: 20px;
-    }
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 16px;
   }
 
-  .text {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-
-      @media (max-width: 768px) {
-        font-size: 14px;
-      }
-    }
+  .text p {
+    margin-bottom: 12px;
+    font-size: 18px;
   }
 `;
