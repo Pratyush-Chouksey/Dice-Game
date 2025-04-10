@@ -6,7 +6,7 @@ const RollDice = ({ relodeImg, randomNumeder }) => {
     <DiceContainer>
       <div className="dice" onClick={relodeImg}>
         <img
-          src={`./public/Images/Dice_Faces/dice_${randomNumeder}.png`}
+          src={`/Images/Dice_Faces/dice_${randomNumeder}.png`}
           alt="dice 1"
         />
       </div>

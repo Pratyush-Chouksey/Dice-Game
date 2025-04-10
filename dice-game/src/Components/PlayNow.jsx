@@ -5,7 +5,7 @@ const PlayNow = ({ handleStart }) => {
   return (
     <Container>
       <ImageWrapper>
-        <img src="./public/Images/Dices.png" alt="Dice" />
+        <img src="/Images/Dices.png" alt="Dice" />
       </ImageWrapper>
       <Content>
         <H1>DICE GAME</H1>
